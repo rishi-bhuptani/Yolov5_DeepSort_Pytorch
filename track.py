@@ -195,7 +195,7 @@ def detect(opt):
                         cls = output[5]
 
                         if save_txt:
-                            # to MOT format
+                            c = int(cls)
                             bbox_left = output[0]
                             bbox_top = output[1]
                             bbox_w = output[2] - output[0]
@@ -203,7 +203,7 @@ def detect(opt):
                             # Write MOT compliant results to file
                             with open(txt_path + '.txt', 'a') as f:
                                 f.write(('%g ' * 8 + '\n') % (frame_idx + 1, id, bbox_left,  
-                                                               bbox_top, bbox_w, bbox_h, cls, names[int(cls)])
+                                                               bbox_top, bbox_w, bbox_h, cls, names[c])
 
                         if save_vid or save_crop or show_vid:  # Add bbox to image
                             c = int(cls)  # integer class
