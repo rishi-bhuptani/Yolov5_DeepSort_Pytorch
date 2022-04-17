@@ -202,7 +202,7 @@ def detect(opt):
                             bbox_h = output[3] - output[1]
                             # Write MOT compliant results to file
                             with open(txt_path + '.txt', 'a') as f:
-                                f.write(('%g ' * 10 + '\n') % (frame_idx + 1, id, bbox_left,  # MOT format
+                                f.write(('%g ' * 7 + '\n') % (frame_idx + 1, id, bbox_left,  
                                                                bbox_top, bbox_w, bbox_h, cls))
 
                         if save_vid or save_crop or show_vid:  # Add bbox to image
